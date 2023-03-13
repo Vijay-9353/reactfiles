@@ -1,0 +1,31 @@
+
+
+table {
+  width:800px;
+  height:200px;
+  border-collapse: collapse;
+}
+
+th {
+  border-bottom: 1px solid rgb(13, 14, 12);
+  border: 2px solid rgb(16, 204, 25);
+}
+
+td {
+  text-align: center;
+  border: 2px solid black;
+}
+.id {
+  text-align: center;
+}
+ th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #fa741b;
+  color: white;
+}
+td:hover {background-color: #ddd;}
+
+h1 {text-align: center;}
+
