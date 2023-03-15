@@ -1,121 +1,108 @@
-/*
+    // import logo from './logo.svg';
+    // import './App.css';
 
-const {Component} = require("react");
+    // function App() {
+    //   return (
+    //     <div className="App">
+    //       <header className="App-header">
+    //         <img src={logo} className="App-logo" alt="logo" />
+    //         <p>
+    //           Edit <code>src/App.js</code> and save to reload.
+    //         </p>
+    //         <a
+    //           className="App-link"
+    //           href="https://reactjs.org"
+    //           target="_blank"
+    //           rel="noopener noreferrer"
+    //         >
+    //           Learn React
+    //         </a>
+    //       </header>
+    //     </div>
+    //   );
+    // }
 
-const TableHeader =() =>{
-  return ( <thead>
-    <tr>
-      <th>Name</th>
-      <th>Job</th>
-      <th>E-mail</th>
-    </tr>
-  </thead>)
-}
-
-const TableBody = (props)=>{
-  const {charactersData} = props
-
-  const rows = charactersData.map((character,index)=>{
-    return (<tr key={index}>
-        <td>{character.name}</td>
-        <td>{character.job}</td>
-        <td>{character.Email}</td></tr>)
-  })
-
-  return (
-    <tbody>
-      {rows}
-    </tbody>
-  )
-}
-
-class Table extends Component {
-  render(){
-    const {charactersData} = this.props     
-    return (
-      <table>
-        <TableHeader />
-        <TableBody charactersData={charactersData} />
-      </table>
-    )
-  }
-}
-export default Table;
-*/
-
+    // export default App;
 
 /*
-import React from 'react';
+    import React from "react";
+    import { Component } from "react";
 
-  class Classcomp extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            index: null,
-            show: false,
-            data: [
-                { id: 1, name: 'Vijay.G', email: 'vijayajay3535.@gmail.com', city: 'Mysore', Role: 'React Js' },
-                { id: 2, name: 'Kanagavel.M', email: 'Vel99@gmail.com', city: 'Mysore', Role: 'Java' },
-                { id: 3, name: 'Dileep.B', email: 'Dilsuma@gmail.com', city: 'Coorg', Role: 'Business ' },
-                { id: 4, name: 'Mithun.R', email: 'corgo@gmail.com', city: 'Chennai', Role: 'Angular' },
-                { id: 5, name:'Kiran.K', email: 'kupee@gmail.com', city: 'Rajasthan', Role: 'Testing' }
-            ]
+    class App extends Component{
+        constructor(){
+            super();
+            this.state={value:"Welcome",name:"Guys"}
         }
+        componentWillMount()
+        {
+            alert("Learn Reactjs lifecycle");
+        }
+        render(){
+
+            return  <div>
+                <h1>{this.state.value} {this.state.name}</h1>
+                <br/>
+                <button type="button" onClick={this.Changevalue}>Change value</button>
+                <button type="button" onClick={this.Deleteheader}>Delete Header</button>
+
+            </div>
+        }
+        Changevalue=() =>
+        {
+            this.setState({value :"Learn react in tamil"});
+        }
+    componentDidMount()
+    {
+        setTimeout(()=>{
+            this.setState({value :"Thank you"})},3000)
+        }
+
+
+    componentWillUpdate() 
+    {
+        alert("Do you want update a new value");
     }
-
-    toggleButton = (e,id) => {
-        this.setState(
-            {
-                
-                index: id,
-                show: !this.state.show
-            }
-            )
+    componentDidUpdate()
+    {
+        document.getElementById("mydiv").innerHTML = `New value Update Successfully ${this.state.value}`
     }
-
-    render() {
-        const { data,index,show } = this.state
-
-        return (
-            <table>
-                <thead>
-                    <tr className='Style'>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>CITY</th>
-                        <th>ROLE</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map(rows => (
-                        <tr key={rows.id}>
-                            <td>{rows.id}</td>
-                            <td>{show && index === rows.id ? rows.name?.split('')[0] : rows.name}</td>
-                            <td>{rows.email}</td>
-                            <td>{rows.city}</td>
-                            <td>{rows.Role}</td>
-                            <td><button className='edit' onClick={(e) => this.toggleButton(e,rows.id)}>{show && index === rows.id ? "Full name" : "First letter"}</button></td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        )
+    shouldComponentUpdate()
+    {
+    return false;
     }
-}
+    Deleteheader=()=>
+    {
+        this.setState({value:false, name:false});
+    }
+    componentWillUnmount()
+    {
+        alert("Header Delete");
+    }
+    }
+    export default App;
 
-export default Classcomp;
+    */
+import React from "react";
+// import Timer from "./Hooks/useState";
+// import ValueChange from "./Hooks/useState";
+// import Counter from "./Hooks/useState";
+// import ValueChanging from "./Hooks/useState";
+// import CounteruseEffect from "./Hooks/useEffect";
+// import Cleanup from "./Hooks/useEffect";
+import StyleElement from "./Hooks/useRef";
 
-*/
-import Price from "./Components/price";
-
-function App() {
-  return(
-    <>
-   <Price />
-   
-   </>
-  )
+function App(){
+    return (
+        <div>
+            {/* <Timer /> */}
+            {/* <ValueChange /> */}
+            {/* <Counter /> */}
+            {/* <ValueChanging /> */}
+            {/* <CounteruseEffect /> */}
+            {/* <Cleanup /> */}
+            <StyleElement />
+          
+        </div>
+    )
 }
 export default App;

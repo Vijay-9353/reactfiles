@@ -1,141 +1,76 @@
-/*
-import { Component } from "react"
-import Table from "./App.js";
-import  ReactDOM  from "react-dom";
-import './App.css'
 
-class App extends Component{
-    render(){
-        const characters =[ {
-            name: 'Vijay.G',
-            job: 'React js',
-            Email: 'vijayajay@gmail.com'
-        },
-        {
-            name: 'Kanagavel.M',
-            job: 'Java',
-            Email: 'vel@gmail.com'
-        },
-        {
-            name: 'Dileep.B',
-            job: 'Business',
-            Email: 'dilsuma@gmail.com'
-        },
-        {
-            name: 'Mithun.S',
-            job: 'Data Analyst',
-            Email: 'coorgo@gmail.com'
-        },
-        {
-          name: 'Kiran.K',
-          job: 'Forest off',
-          Email: 'Kirankupeer@gmail.com'
-      },]
-        return (
-            <div className="container">
-                <h1>Friends </h1>
-                <Table charactersData={characters} />
-            </div>
-        )
-    }
-}
-
-ReactDOM.render(<App />,document.getElementById('root'));
-
-*/
-
-
-/*
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class Lparent extends React.Component{
-  render()
-  {
-    return<h1>Learn React-{this.props.var.concept} in {this.props.var.language}</h1>
-  }
-}
-
-class Lchild extends React.Component {
-  render()
-  {
-    const v={topic : "react js" ,language :"Tamil",concept : "props"}
-    return <Lparent var ={v}/>
-  }
-}
-ReactDOM.render(<Lchild/>,document.getElementById('root'));
-*/
-
-/*
- Lparent.defaultProps ={Concept :"Props" , language: "English"}
-
-ReactDOM.render(<Lparent concept ="Component Vs State" language ="English" />,
-document.getElementById('root'));
-
-*/
-
-/*
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class Lparent extends React.Component{
-  render()
-  {
-    const v={topic : "react js" ,language :"Tamil",concept : "props"}
-    return <Lchild var ={v}/>
-  }
-}
-
-class Lchild extends React.Component {
-  render()
-  {
-    return<h1>Learn React-{this.props.var.concept} in {this.props.var.language}</h1>
-    
-  }
-}
-ReactDOM.render(<Lparent/>,document.getElementById('root'));
-*/
-
-/*
-import React from 'react';
-import  ReactDOM  from 'react-dom';
-import ClassComp from './App';
-import './App.css';
-
-
-class App extends React.Component{
-  render(){
-  return(
-    <ClassComp />
-  )
-}
-}
-ReactDOM.render(<App />,document.getElementById('root'));
-
-
-
-*/
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Price from './Components/price';
 import reportWebVitals from './reportWebVitals';
-import Changename from './Components/functionstate';
-import FuncProps from './Components/functionProps';
-
+import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-        <Price />
-        <hr></hr>
-      <br></br>
-        <Changename/>
-        <hr></hr>
-        <FuncProps />
-       
+   <App />
   </React.StrictMode>
-
 );
 
-
 reportWebVitals();
+/*
+import React from "react";
+import { Component } from "react";
+import  ReactDOM  from "react-dom";
+
+class LifeCycle extends Component{
+    Constructor(){
+        this.state={value:"Welcome", name:"Guys"}
+    }
+     componentWillMount()
+    {
+        alert("Learn React js Lifecycle");
+    }
+    render(){
+        return(
+        <div>
+            <h1>{this.state.value} {this.state.name}</h1>
+            <br/>
+            <button type="button" onClick={this.Changevalue}>Change value</button>
+            <button type="button" onClick={this.Deleteheader}>Change value</button>
+
+        </div>
+    )}
+    Changevalue=() =>
+    {
+        this.setState({value :"Learn react in tamil"});
+    }
+componentDidMount()
+{
+    setTimeout(()=>{
+        this.setState({value :"Thank you"})},5000)
+    }
+
+
+componentWillUpdate()
+{
+    alert("Do you want update a new value");
+}
+componentDidUpdate()
+{
+    document.getElementById("mydiv").innerHTML ="New value Update Successfully" +this.state.value;
+}
+shouldComponentUpdate()
+{
+   return true;
+}
+Deleteheader=()=>
+{
+    this.setState({value:false, name:false});
+}
+componentWillUnmount()
+{
+    alert("Header Delete");
+}
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <LifeCycle />
+  </React.StrictMode>
+);
+*/
